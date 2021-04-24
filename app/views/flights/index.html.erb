@@ -1,0 +1,18 @@
+<%= form_with url: "/flights", method: "get" do |f| %>
+  <%= f.label('flight[from]', "FROM: ") %>
+  <%= f.select("flight[from]", options_for_select(@airports, default_params(:from)), { include_blank: 'Origin' }) %>
+  <%= f.label('flight[to]', "TO: ") %>
+  <%= f.select "flight[to]", options_for_select(@airports, default_params(:to)), { include_blank: 'Destination' } %><br>
+  <%= f.label('flight[date]', "Date: ") %>
+  <%= f.select "flight[date]", @flight_date, { selected: default_params(:date), include_blank: 'Date' } %>
+  <%= f.label("flight[number_pax]", "Number of passengers: ") %>
+  <%= f.select "flight[number_pax]", options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]], default_params(:number_pax)), { include_blank: 'Number of passengers' } %>
+  <%= f.submit "Search for flights" %>
+<% end %>
+<% unless params[:flight].nil? %>
+  <% @available_flights.each do |flight| %>
+    <%= flight.id %><br>
+  <% end %>
+<% end %>
+
+
