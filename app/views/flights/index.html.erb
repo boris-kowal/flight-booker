@@ -10,9 +10,15 @@
   <%= f.submit "Search for flights" %>
 <% end %>
 <% unless params[:flight].nil? %>
-  <% @available_flights.each do |flight| %>
-    <%= flight.id %><br>
+  <%= form_with url: "/bookings/new", method: "get" do |f| %>
+    <% @available_flights.each do |flight| %>
+      <%= flight.origin.name %>
+      <%= flight.destination.name %>
+      <%= flight.date %>
+      <%= flight.duration %>
+      <%= f.hidden_field :flight, value: flight.id %>
+      <%= f.hidden_field :number_pax, value: params[:flight][:number_pax] %>
+      <%= f.submit "Book this flight" %><br>
+    <% end %>
   <% end %>
 <% end %>
-
-

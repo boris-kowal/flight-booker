@@ -1,0 +1,25 @@
+<%= form_with model: @booking do |form| %>
+  Passengers:
+  <%= form.fields_for :passengers do |pax_details| %>
+    <%= pax_details.label :name, "Enter your name"%>
+    <%= pax_details.text_field :name%>
+    <%= pax_details.label :email, "Enter your email"%>
+    <%= pax_details.text_field :email%>
+
+    <%= pax_details.label :name, "Enter your name"%>
+    <%= pax_details.text_field :name%>
+    <%= pax_details.label :email, "Enter your email"%>
+    <%= pax_details.text_field :email%>
+
+    <%= pax_details.label :name, "Enter your name"%>
+    <%= pax_details.text_field :name%>
+    <%= pax_details.label :email, "Enter your email"%>
+    <%= pax_details.text_field :email%>
+
+    <%= pax_details.label :name, "Enter your name"%>
+    <%= pax_details.text_field :name%>
+    <%= pax_details.label :email, "Enter your email"%>
+    <%= pax_details.text_field :email%>
+  <% end %>
+<% end %>
+
