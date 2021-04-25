@@ -16,7 +16,7 @@
       <%= flight.destination.name %>
       <%= flight.date %>
       <%= flight.duration %>
-      <%= f.hidden_field :flight, value: flight.id %>
+      <%= f.hidden_field :flight_id, value: flight.id %>
       <%= f.hidden_field :number_pax, value: params[:flight][:number_pax] %>
       <%= f.submit "Book this flight" %><br>
     <% end %>

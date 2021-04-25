@@ -1,0 +1,16 @@
+<h2>Passengers information:</h2><br>
+  <h3>Passenger names:</h3>
+    <% @passengers.each do |passenger| %>
+      <%= passenger.name %>
+      <%= passenger.email %>
+    <% end %>
+<h2>Flight information:</h2><br>
+  <h3>From:</h3>
+  <%= @flight.origin.name %>
+  <h3>To:</h3>
+  <%= @flight.destination.name %>
+  <h3>Departure time:</h3>
+  <%= @flight.date %>
+  <h3>Duration:</h3>
+  <%= @flight.duration.to_s + "h" %>
+
