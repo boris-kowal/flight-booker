@@ -1,0 +1,9 @@
+Thank you for your booking, <%= @booking.passengers[0].name %>
+You have successfully booked your flight, please find details below:
+---------------------------------
+Origin: <%= @booking.flight.origin.name %>
+Destination: <%= @booking.flight.destination.name %>
+Date: <%= @booking.flight.date %>
+To find your booking, just follow this link: <%= @url %>.
+
+Thanks for chosing to fly with us and have a great day!

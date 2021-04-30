@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     @flight_id = params[:flight_id]
     @booking = Booking.new(passenger_params)
     if @booking.save
+      PassengerMailer.with(booking: @booking).thank_you_email.deliver_now
       redirect_to @booking
     else
       render :new
